@@ -52,3 +52,4 @@ endpoint_snitch: GossipingPropertyFileSnitch
 nodetool status
 ```
 ![](images/6.png)
+
