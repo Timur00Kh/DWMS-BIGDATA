@@ -7,5 +7,5 @@ do
     do
       s="$s insert into timur.TEST(id, name) values ($(( i + 10000 * j )),  'name777');"
     done
-    cqlsh "$cassandra_ip" -e "$s"
+    cqlsh 172.31.77.183 -e "$s"
 done

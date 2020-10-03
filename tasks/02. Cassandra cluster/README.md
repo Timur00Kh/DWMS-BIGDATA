@@ -53,3 +53,41 @@ nodetool status
 ```
 ![](images/6.png)
 
+
+## Insert data
+
+### Create keyspace and table
+```CQL
+CREATE KEYSPACE timur
+WITH replication = {'class': 'NetworkTopologyStrategy', 'dc1' : 1};
+
+CREATE TABLE timur.TEST (
+    ID int PRIMARY KEY, NAME text
+);
+```
+
+### Bash script
+```bash
+#!/usr/bin/env bash
+
+for j in {1..1000}
+do
+    s=""
+    for i in {1..1000}
+    do
+      s="$s insert into timur.TEST(id, name) values ($(( i + 10000 * j )),  'name777');"
+    done
+    cqlsh 172.31.77.183 -e "$s"
+done
+```
+
+### Check nodes tables
+```bash
+nodetool tablestats timur.test
+```
+![](images/7.png)
+
++ node1: 321274 (32.12%)
++ node2: 333378 (33.33%)
++ node3: 345348 (34.53%)
+sum: 1000000
