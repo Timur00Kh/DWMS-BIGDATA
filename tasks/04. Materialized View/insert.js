@@ -24,7 +24,7 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
     let index = 0
     while (index < 1000000) {
         const queries = []
-        for (let i = 1; i < 500; i++) {
+        for (let i = 0; i < 500; i++) {
             queries.push({
                 query: 'INSERT INTO task4 (id, dept_name, name) VALUES (?, ?, ?)',
                 params: [index, randomElement(DEPTS), randomElement(NAMES)]
