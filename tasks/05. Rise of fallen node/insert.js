@@ -24,12 +24,13 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
 (async () => {
     let i = 1
     while (true) {
-        await client.execute(
-            'INSERT INTO task5 (id, name) VALUES (?, ?)',
-            [i, randomElement(NAMES)]
-        )
+        await client.batch([
+            {
+                query: 'INSERT INTO task5 (id, name) VALUES (?, ?)',
+                params: [i, randomElement(NAMES)]
+            }
+        ], { prepare: true });
         i++
-
         if (i % 100000) console.log('Queries amount: ' + i)
     }
 })()
