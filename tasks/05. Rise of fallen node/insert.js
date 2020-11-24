@@ -3,7 +3,7 @@ const { v4: uuidv4 } =  require('uuid');
 
 //   ssh -L localhost:9043:ec2-35-175-120-75.compute-1.amazonaws.com:9042 ubuntu@ec2-35-175-120-75.compute-1.amazonaws.com -i "ec2.pem"
 const client = new cassandra.Client({
-    contactPoints: ['localhost:9042'],
+    contactPoints: ['172.31.77.183:9042'],
     localDataCenter: 'dc1',
     keyspace: 'timur',
     credentials: {
