@@ -1,0 +1,24 @@
+{
+  "name": "dwms-bigdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cassandra-driver": "^4.6.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timur00Kh/DWMS-BIGDATA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timur00Kh/DWMS-BIGDATA/issues"
+  },
+  "homepage": "https://github.com/Timur00Kh/DWMS-BIGDATA#readme"
+}

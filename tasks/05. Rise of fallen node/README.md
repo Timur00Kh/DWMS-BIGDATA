@@ -1,7 +1,7 @@
 
 ### 1. Create new table
 
-Создать новую таблицу состоящую из 3 столбцов (ID, DEPT_NAME, NAME) с первичным ключом ( (ID), DEPT_NAME ) , где ID - ключ распределения, DEPT_NAME - ключ сортировки
+Создать новую таблицу
 
 ```CQL
 CREATE TABLE timur.task5
@@ -11,42 +11,35 @@ CREATE TABLE timur.task5
 );
 ```
 
-### 2. Fill table with 1000000 random rows
-Заполнить таблицу произвольными данными в порядке 1 000 000 строк
+### 2. Endless insert cycle
+Бесконечный цикл
 
 + [NodeJS script](insert.js)
 
-### 3. Select with tracing on
+### 3. Fall of the node
 
-```cql
-SELECT * FROM timur.task4 WHERE ID = 100 AND DEPT_NAME = 'Devops';
+```bash
+ps axu | grep cassandra
+sudo kill -9 <pid>
+nodetool status
 ```
+
 ![](images/1.png)
 
-```cql
-SELECT * FROM timur.task4 WHERE NAME = 'Timur_TEST';
-SELECT * FROM timur.task4 WHERE NAME = 'Timur_TEST' ALLOW FILTERING;
-```
-![](images/2.png)
-+ [full log](log2.txt)
+![](images/4.png)
 
-### 4. Create Materialized View
-
-```cql
-CREATE MATERIALIZED VIEW timur.task4_mv AS
-SELECT *
-FROM timur.task4
-WHERE name IS NOT NULL AND dept_name IS NOT NULL
-PRIMARY KEY ( (id), dept_name, name );
-```
-
-```cql
-SELECT * FROM timur.task4_mv WHERE NAME = 'Timur_TEST';
-SELECT * FROM timur.task4_mv WHERE NAME = 'Timur_TEST' AND dept_name = 'Java Developer';
-SELECT * FROM timur.task4_mv WHERE NAME = 'Timur_TEST' AND dept_name = 'Java Developer' ALLOW FILTERING;
-```
-
++ **Error**
 ![](images/3.png)
-+ [full log](log3.txt)
+
+### 4. Rise of the node
+
+```bash
+sudo systemctl restart cassandra
+```
+
+![](images/2.png)
+
+![](images/4.png)
+
 
 
