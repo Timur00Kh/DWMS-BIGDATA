@@ -1,5 +1,5 @@
 const cassandra = require('cassandra-driver');
-const { v4: uuidv4 } =  require('uuid');
+const {v4: uuidv4} = require('uuid');
 
 //   ssh -L localhost:9043:ec2-35-175-120-75.compute-1.amazonaws.com:9042 ubuntu@ec2-35-175-120-75.compute-1.amazonaws.com -i "ec2.pem"
 const client = new cassandra.Client({
@@ -20,11 +20,10 @@ function randomElement(items) {
 const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
 
 
-
 (async () => {
-    try {
-        let i = 1
-        while (true) {
+    let i = 1
+    while (true) {
+        try {
             await client.batch([
                 {
                     query: 'INSERT INTO task5 (id, name) VALUES (?, ?)',
@@ -33,9 +32,9 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
             ], {prepare: true});
             i++
             if (i % 1000000) console.log('Queries amount: ' + i)
+        } catch (e) {
+            console.log(e)
         }
-    } catch (e) {
-        console.log(e)
     }
 })()
 
