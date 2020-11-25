@@ -28,7 +28,7 @@ nodetool status
 
 ![](images/4.png)
 
- **Error**
+##### Error
 ![](images/3.png)
 
 ### 4. Rise of the node
