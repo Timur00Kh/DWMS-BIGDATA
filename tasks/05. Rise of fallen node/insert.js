@@ -32,15 +32,13 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
                 }
             ], {prepare: true});
             i++
-            if (i % 1000000) console.log('Queries amount: ' + i)
         } catch (e) {
             err++
-            console.log(e)
         }
         // process.stdout.write("Hello, World");
         process.stdout.clearLine();
         process.stdout.cursorTo(0);
-        process.stdout.write(`Queries: ${q}; Errors: ${err}`); 
+        process.stdout.write(`Queries: ${q}; Errors: ${err}`);
     }
 })()
 
