@@ -34,11 +34,14 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
             i++
         } catch (e) {
             err++
+            console.error(e)
         }
-        // process.stdout.write("Hello, World");
-        process.stdout.clearLine();
-        process.stdout.cursorTo(0);
-        process.stdout.write(`Queries: ${q}; Errors: ${err}`);
+        if (i % 1000000) {
+            // process.stdout.write("Hello, World");
+            process.stdout.clearLine();
+            process.stdout.cursorTo(0);
+            process.stdout.write(`Queries: ${q}; Errors: ${err}`);
+        }
     }
 })()
 
