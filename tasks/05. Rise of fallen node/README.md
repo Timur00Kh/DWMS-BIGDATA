@@ -16,6 +16,9 @@ CREATE TABLE timur.task5
 
 + [NodeJS script](insert.js)
 
+Спустя 5 минут было выполнено 333391 запросов:
+![](images/5.png)
+
 ### 3. Fall of the node
 
 ```bash
@@ -26,10 +29,12 @@ nodetool status
 
 ![](images/1.png)
 
-![](images/4.png)
+На упавшей ноде упал график сети процессора и освободилать оперативная память:
+![](images/6.png)
 
-##### Error
-![](images/3.png)
+##### Errors
+Из-за настроек репликации кассандры она не смогла принимать больше данных
+![](images/error.png)
 
 ### 4. Rise of the node
 
@@ -39,7 +44,9 @@ sudo systemctl restart cassandra
 
 ![](images/2.png)
 
-![](images/4.png)
+Нагрузка на наду восстановилась:
+![](images/7.png)
+![](images/8.png)
 
 
 
