@@ -21,7 +21,8 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
 
 
 (async () => {
-    let i = 1
+    let q = 0;
+    let err = 0;
     while (true) {
         try {
             await client.batch([
@@ -33,8 +34,13 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
             i++
             if (i % 1000000) console.log('Queries amount: ' + i)
         } catch (e) {
+            err++
             console.log(e)
         }
+        // process.stdout.write("Hello, World");
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+        process.stdout.write(`Queries: ${q}; Errors: ${err}`); 
     }
 })()
 
