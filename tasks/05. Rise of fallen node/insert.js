@@ -36,7 +36,7 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
             err++
             console.error(e)
         }
-        if (i % 1000000) {
+        if (q % 1000000) {
             // process.stdout.write("Hello, World");
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
