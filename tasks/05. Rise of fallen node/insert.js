@@ -28,10 +28,10 @@ const NAMES = ['Ivan', 'Timur', 'Razil', 'Emil', 'Maxim', 'Azat'];
             await client.batch([
                 {
                     query: 'INSERT INTO task5 (id, name) VALUES (?, ?)',
-                    params: [i, randomElement(NAMES)]
+                    params: [q, randomElement(NAMES)]
                 }
             ], {prepare: true});
-            i++
+            q++
         } catch (e) {
             err++
             console.error(e)
