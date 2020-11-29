@@ -44,7 +44,7 @@ sudo systemctl restart cassandra
 
 ![](images/2.png)
 
-Нагрузка на наду восстановилась:
+Нагрузка на ноду восстановилась:
 ![](images/7.png)
 ![](images/8.png)
 
