@@ -152,9 +152,9 @@ wget https://download.jetbrains.com/idea/ideaIU-2020.3.win.zip # 825.00M
 # Загрузил файл в hdfs
 hadoop fs -put ideaIU-2020.3.win.zip /ideaIU-2020.3.win.zip
 
-hadoop dfs -ls /
+hdfs dfs -ls /
 ```
-![](images/4.png)
+![](images/5.png)
 
 
 
