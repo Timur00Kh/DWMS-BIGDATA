@@ -2,7 +2,7 @@
 
 ## 1. развернуть кластер HDFS (x4 ноды)
 
-Делал по данному мануалу: [How To Set Up a Hadoop 3.2.1 Multi-Node Cluster](https://medium.com/@jootorres_11979/how-to-set-up-a-hadoop-3-2-1-multi-node-cluster-on-ubuntu-18-04-2-nodes-567ca44a3b12)
+Делал по данному туториалу: [How To Set Up a Hadoop 3.2.1 Multi-Node Cluster](https://medium.com/@jootorres_11979/how-to-set-up-a-hadoop-3-2-1-multi-node-cluster-on-ubuntu-18-04-2-nodes-567ca44a3b12)
 
 #### Вспомогательные команды:
 
@@ -142,8 +142,6 @@ Num of Blocks: 0
 
 
 ## 4. Сохранить большой файл
-
-Скачал установочник IDE от JetBrains
 
 ```
 # Скачал установочник IDE от JetBrains
