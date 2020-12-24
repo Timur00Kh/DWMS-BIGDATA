@@ -1,4 +1,20 @@
-# Zabbix
+# 03. Zabbix
+
+Выбрав одну из open-source мониторинговых систем
++ Nagios
++ Zabbix
++ Munin
++ etc.
+
+развернуть на 4 сервере (worker01, не cassandra node) архитектуры
+
+Настроить получение данных  телеметрии по метрикам ниже с 3 серверов архитектуры cassandra (используя например Zabbix / Nagios agents)
++ write / read IOPS
++ CPU
++ RAM
+
+Продемонстрировать графики по указанным метрикам для каждого из серверов Cassandra
+
 
 ## Install Zabbix
 

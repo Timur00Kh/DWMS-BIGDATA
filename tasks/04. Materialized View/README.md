@@ -1,3 +1,33 @@
+# 04. Materialized View
+
+Создать новую таблицу состоящую из 3 столбцов (ID, DEPT_NAME, NAME) с первичным ключом ( (ID), DEPT_NAME ) , где ID - ключ распределения, DEPT_NAME - ключ сортировки
+
+Заполнить таблицу произвольными данными в порядке 1 000 000 строк
+
+Сделать tracing по поиску по ключу (по полю ID и DEPT_NAME одновременно). Поисковые запросы должны иметь реально существующие данные которые Cassandra будет возвращать. 
+
+```CQL
+SELECT *
+    FROM table_name
+ WHERE ID = 100 AND DEPT_NAME = ‘HR’;
+```
+
+и на поиск данных без ключа
+```CQL
+SELECT *
+    FROM table_name
+ WHERE NAME = ‘Ivan’
+```
+
+Создать Materialized View (MV) с переопределением ключей чтобы поиск по NAME имел смысл
+
+получить данные по tracing для MV
+
+```CQL
+SELECT *
+    FROM mv_name
+ WHERE NAME = ‘Ivan’
+```
 
 ### 1. Create new table
 

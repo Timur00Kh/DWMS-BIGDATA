@@ -1,5 +1,10 @@
 # 09. HDFS
 
+1. Используя существующие узлы EC2 (возможно потребуется создание +1) развернуть кластер HDFS (x4 ноды)
+1. Проиницилизировать одну MasterNode и 3 DataNodes 
+1. Проверить работоспособность всего кластера через hdfs status
+1. Сохранить большой файл ( ~ 100 Mb) на уровень HDFS и доказать что он лежит внутри кластера командой: “hdfs ... -ls … ”
+
 ## 1. развернуть кластер HDFS (x4 ноды)
 
 Делал по данному туториалу: [How To Set Up a Hadoop 3.2.1 Multi-Node Cluster](https://medium.com/@jootorres_11979/how-to-set-up-a-hadoop-3-2-1-multi-node-cluster-on-ubuntu-18-04-2-nodes-567ca44a3b12)
